@@ -1,0 +1,51 @@
+.home_page {
+  .index_swiper {
+    swiper {
+      width: 750rpx;
+      height: 340rpx;
+    }
+
+    image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .nav {
+    width: 100%;
+    display: flex;
+    padding: 20rpx;
+    justify-content: space-between;
+
+    navigator {
+      width: 20%;
+
+      image {
+        width: 100%;
+      }
+    }
+  }
+
+  .floor {
+    .body {
+      overflow: hidden;
+      navigator {
+        float: left;
+        width: 33%;
+        padding: 8rpx;
+        // 原图 232*386
+        // 232/386 = 33.vw/height
+        height: 33.33vw*(386/232)/2;
+        &:nth-child(1){
+          height: 33.33vw*(386/232);
+        }
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,56 @@
+@import '../../styles/_variable.less';
+
+.goods_detail_page {
+  padding-bottom: 90rpx;
+  swiper {
+    height: 60vw;
+    text-align: center;
+
+    image {
+      width: 60%;
+      height: 60%;
+    }
+  }
+  .price{
+    font-size: 40rpx;
+  }
+  .title{
+    border-bottom: 4px solid @grey;
+  }
+
+
+  .introduce{
+    .text-theme{
+      font-size: 40rpx;
+    }
+  }
+
+
+  .bottom_tool{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 90rpx;
+    .tool_item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      button{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+    }
+    .btn_addCart{
+
+    }
+    .btn_buy{
+      background-color: #ffa500;
+    }
+  }
+}

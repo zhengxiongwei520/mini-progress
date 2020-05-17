@@ -1,0 +1,61 @@
+@import '../../styles/_variable.less';
+.text-center{
+  text-align: center;
+}
+.categories_page {
+  .cates_container {
+    display: flex;
+    justify-content: space-around;
+    height: ~'calc( 100vh - 90rpx )';
+
+    .left_menu {
+      flex:2;
+      background-color: whitesmoke;
+
+      .left_menu_item {
+        text-align: center;
+        padding: 10rpx 0;
+
+        &.active {
+          background-color: white;
+        }
+
+        view {
+          &.active {
+            border-left: 8rpx solid @themeColor;
+          }
+        }
+      }
+    }
+
+    .right_menu {
+      flex:5;
+
+      .title {
+        font-size: 50rpx;
+        color: whitesmoke;
+
+        text {
+          color: black;
+        }
+      }
+
+      .imageList {
+        margin-top: 50rpx;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left:40rpx;
+        .img {
+          width: 30%;
+          padding: 10rpx;
+          margin-bottom: 40rpx;
+          image {
+            width: 120rpx;
+            height: 120rpx;
+          }
+        }
+      }
+
+    }
+  }
+}

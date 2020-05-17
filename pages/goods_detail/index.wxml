@@ -1,0 +1,52 @@
+<view class="goods_detail_page">
+  <!-- 轮播图开始 -->
+  <swiper class="pic" autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}">
+    <block wx:for="{{goodsDetail.pics}}">
+      <swiper-item class="" bindtap="previewImage" data-current="{{item.pics_mid}}">
+        <image class="" src="{{item.pics_mid}}" mode="widthFix" lazy-load="false" binderror="" bindload=""></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 轮播图结束 -->
+  <!-- 商品价格开始 -->
+  <view class="price text-theme ml-2 mb-2">￥{{goodsDetail.goods_price}}</view>
+  <view class="title d-flex jc-between">
+    <view class="flex-5 mb-2 pl-2">{{goodsDetail.goods_name}}</view>
+    <view class="collect d-flex mb-2 flex-1 flex-column ai-center jc-center border-left">
+      <view class="iconfont icon-shoucang"></view>
+      <view class="shoucang">收藏</view>
+    </view>
+  </view>
+  <!-- 商品价格结束 -->
+  <!-- 商品详情开始 -->
+  <view class="introduce">
+    <view class="text-theme p-2 text-title">图文详情</view>
+    <rich-text class="body mt-2 bg-grey" nodes="{{goodsDetail.goods_introduce}}"></rich-text>
+  </view>
+  <!-- 商品详情结束 -->
+  <!-- 底部工具栏开始 -->
+  <view class="bottom_tool d-flex  w-100 bg-grey1">
+    <view class="tool_item flex-1">
+      <view class="iconfont icon-kefu"></view>
+      <view>客服</view>
+      <button class="contact" open-type="contact"></button>
+    </view>
+    <view class="tool_item flex-1">
+      <view class="iconfont icon-kefu"></view>
+      <view>分享</view>
+      <button class="contact" open-type="share"></button>
+    </view>
+    <navigator url="/pages/cart/index" open-type="switchTab" class="tool_item flex-1">
+      <view class="iconfont icon-gouwuche"></view>
+      <view>购物车</view>
+    </navigator>
+    <view class="tool_item  flex-2 bg-theme btn_addCart text-white text-title"
+    bindtap="addToCart">
+      <view>加入购物车</view>
+    </view>
+    <view class="tool_item  flex-2 btn_buy text-white text-title">
+      <view>立即购买</view>
+    </view>
+  </view>
+  <!-- 底部工具栏结束 -->
+</view>

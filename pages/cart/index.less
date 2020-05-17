@@ -1,0 +1,48 @@
+@import '../../styles/_variable.less';
+
+.cart_page {
+  background-color: rgba(247, 247, 247, 0.5);
+
+  .address {
+    border-radius: 30rpx;
+  }
+
+  .title {
+    font-size: 40rpx;
+  }
+
+
+  .cart_info {
+    border-radius: 30rpx;
+
+    // 加减的样式
+    .num_edit {
+      width: 40rpx;
+      height: 40rpx;
+      border: 1px solid #ccc;
+      text-align: center;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+    }
+  }
+  .cart_info_right{
+    width:60%
+  }
+  //  购物车底部
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 90rpx;
+
+    .total_price {
+      text-align: right;
+    }
+
+    .count {
+      text-align: center;
+      line-height: 90rpx;
+    }
+  }
+}

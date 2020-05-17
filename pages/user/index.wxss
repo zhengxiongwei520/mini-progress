@@ -1,0 +1,29 @@
+.user_header {
+  height: 45vh;
+}
+.user_header .login {
+  position: relative;
+  background-color: #D81E06;
+}
+.user_header .login button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.user_header .user_info_wrap {
+  position: relative;
+}
+.user_header .user_bg {
+  filter: blur(10rpx);
+}
+.user_header .user_info {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 20%;
+}
+.user_header .user_info .user_icon {
+  width: 150rpx;
+  height: 150rpx;
+}

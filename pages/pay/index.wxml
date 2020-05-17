@@ -1,0 +1,50 @@
+<view class="pay_page bg-halfGery2 ">
+  <view style="height:1rpx"></view>
+  <!-- 地址信息 -->
+  <view class="address bg-white radius-3 m-2 p-2 ">
+    <view class="choose_address" wx:if="{{!address.userName}}">
+      <button type="primary" bindtap="handleAddress">添加地址</button>
+    </view>
+    <block class="else" wx:else>
+      <view class="user_info  d-flex jc-between mb-2">
+        <view class="user_name">收件人：{{address.userName}}</view>
+        <view class="user_phone">{{address.telNumber}}</view>
+      </view>
+      <view class="address_info">地址：{{address.all}}</view>
+    </block>
+  </view>
+  <!-- 地址信息结束 -->
+  <view class="title text-theme text-title m-2">购物车</view>
+  <!-- 购物车内容开始 -->
+  <view class="content pb-2">
+    <view class="cart_item d-flex radius-3 m-2 bg-white ai-center jc-between" wx:for="{{cart}}" wx:key="goods_id">
+      <!-- 图片 -->
+      <view class="left flex-1 p-3">
+        <image class="w-100" mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'http://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+      </view>
+      <!-- 图片右侧信息 -->
+      <view class="right d-flex flex-column jc-between ai-center p-2" style="width:70%;">
+        <view class="goods_name text-hidden mb-4">{{item.goods_name}}</view>
+        <view class="goods_count d-flex jc-between w-100">
+          <view class="goode_price text-theme">￥ {{item.goods_price}}</view>
+          <view class="goods_num">X {{item.num}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 购物车内容结束 -->
+  <!-- 底部结算开始 -->
+  <view class="footer d-flex bg-white w-100 ">
+    <view class="count_info flex-8 text-right p-2">
+      <view class="total_price">
+        合计：
+        <text class="price text-theme">{{totalPrice}}</text>
+      </view>
+      <view class="s">包含运费</view>
+    </view>
+    <view class="pay bg-theme text-white h-100 flex-2 d-flex jc-center ai-center" bindtap="pay">
+      支付({{totalNum}})
+    </view>
+  </view>
+  <!-- 底部结算结束 -->
+</view>

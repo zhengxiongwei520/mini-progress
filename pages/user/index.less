@@ -1,0 +1,38 @@
+@import '../../styles/_variable.less';
+
+.user_header {
+  height: 45vh;
+
+  .login {
+    position: relative;
+    background-color: @themeColor;
+    button{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .user_info_wrap {
+    position: relative;
+  }
+
+  .user_bg {
+    filter: blur(10rpx);
+  }
+
+  .user_info {
+    position: absolute;
+    left: 50%;
+    // transform: translateX(-50%);
+    transform: translate(-50%, -50%);
+    top: 20%;
+
+    .user_icon {
+      width: 150rpx;
+      height: 150rpx;
+    }
+
+  }
+}

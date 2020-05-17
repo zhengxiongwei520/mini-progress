@@ -1,0 +1,22 @@
+<view class="user_page">
+  <!-- 头部 -->
+  <view class="user_header w-100">
+    <!-- 没有用户信息 -->
+    <block class="login " wx:if="{{!userInfo.nickName}}">
+      <view class="w-100 h-100 login">
+        <button class="" type="primary" size="small" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+          登录
+        </button>
+      </view>
+    </block>
+    <!-- 有用户信息 -->
+    <block class="user_info_wrap" wx:else>
+      <image class="user_bg h-100 w-100" src="{{userInfo.avatarUrl}}" mode="scaleToFill"></image>
+      <view class="user_info">
+        <image class="user_icon" src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+        <view class="nick_name text-center text-white">{{userInfo.nickName}}</view>
+      </view>
+    </block>
+  </view>
+  <!-- 头部结束 -->
+</view>

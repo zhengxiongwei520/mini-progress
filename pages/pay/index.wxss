@@ -1,0 +1,13 @@
+.pay_page {
+  height: 100vh;
+  padding-bottom: 90rpx;
+}
+.pay_page .footer {
+  height: 90rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.pay_page .footer .count_info {
+  text-align: right;
+}

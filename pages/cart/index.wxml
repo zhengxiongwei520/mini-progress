@@ -1,0 +1,61 @@
+<view class="cart_page p-2">
+  <view class="" style="height:0.1rpx;"></view>
+  <!-- 地址开始 -->
+  <view class="address bg-white text-black">
+    <view class="choose_address" wx:if="{{!address.userName}}">
+      <button type="primary" bindtap="handleAddress">添加地址</button>
+    </view>
+    <view wx:else class="address_info p-2 d-flex jc-between">
+      <view class="user_info">
+        <view class="userName">用户：{{address.userName}}</view>
+        <view class="userAddress">
+          {{address.provinceName + address.cityName + address.countyName + address.detailInfo}}
+        </view>
+      </view>
+      <view class="user_phone">{{address.telNumber}}</view>
+    </view>
+  </view>
+  <!-- 地址结束 -->
+  <view class="title text-title text-theme my-2">购物车(数量为0时自动删除)</view>
+  <!-- 购物车信息开始 -->
+  <view class="cart_info bg-white d-flex jc-between w-100 ai-center p-2 mb-2" wx:for="{{cart}}" wx:key="{{cat_id}}">
+    <!-- 单选框 -->
+    <view class="checkbox  ">
+      <checkbox value="cb" checked="{{item.checked}}" bindtap="checkboxEdit" data-id="{{item.goods_id}}"/>
+    </view>
+    <!-- 信息栏左侧-图片 -->
+    <view class="cart_info_left flex-1 m-2">
+      <image class="w-100" mode="widthFix" src="{{item.goods_small_logo?item.goods_small_logo:'http://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+    </view>
+    <!-- 信息栏右侧 -->
+    <view class="cart_info_right ">
+      <view class="goods_name text-hidden mb-2 w-100">{{item.goods_name}}</view>
+      <view class="price_warp d-flex  ai-center w-100 jc-between">
+        <view class="goods_price text-theme text-title">￥{{item.goods_price}}</view>
+        <view class="d-flex jc-between">
+          <view class="num_edit" bindtap="decreaseNum" data-id="{{item.goods_id}}">-</view>
+          <view class="goods_num mx-3">{{item.num}}</view>
+          <view class="num_edit" bindtap="increaseNum" data-id="{{item.goods_id}}" >+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 购物车信息结束 -->
+  <!-- 购物车底部开始 -->
+  <view class="footer border-top w-100 d-flex ai-center">
+    <view class="checkbox flex-4 ml-2 ">
+      <label class="checkbox d-flex ai-center">
+        <checkbox checked="{{allChecked}}" bindtap="seletctAll" class="ml-2" />
+        <view>全选</view>
+      </label>
+    </view>
+    <view class="total_price flex-4 m-2">
+      <view class="1 text-theme">合计：    ￥{{totalPrice}}</view>
+      <view class="yunfei">包含运费</view>
+    </view>
+    <view class="flex-2">
+      <view class="text-white  h-100 bg-theme text-title count" bindtap="settlement">结算({{totalNum}})</view>
+    </view>
+  </view>
+  <!-- 购物车底部结束 -->
+</view>
