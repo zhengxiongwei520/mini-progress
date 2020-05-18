@@ -1,4 +1,4 @@
-<view class="user_page">
+<view class="user_page bg-grey2">
   <!-- 头部 -->
   <view class="user_header w-100">
     <!-- 没有用户信息 -->
@@ -19,4 +19,69 @@
     </block>
   </view>
   <!-- 头部结束 -->
+  <!-- 用户内容 -->
+  <view class="user_content p-2 w-100">
+    <!-- 收藏开始 -->
+    <view class="collect d-flex ai-center mb-2 bg-white jc-between p-2">
+      <view class="ship flex-1 text-center">
+        <view class="text-theme">0</view>
+        <view class="">收藏的店铺</view>
+      </view>
+      <navigator url="/pages/collect/index" class="collect_goods flex-1 text-center">
+        <view class="text-theme">{{collectNum}}</view>
+        <view class="">收藏的商品</view>
+      </navigator>
+      <view class="follow_goods flex-1 text-center">
+        <view class="text-theme">0</view>
+        <view class="">关注的商品</view>
+      </view>
+      <view class="history flex-1 text-center">
+        <view class="text-theme">0</view>
+        <view class="">我的足迹</view>
+      </view>
+    </view>
+    <!-- 订单相关 -->
+    <view class="my_order p-2 my-2 bg-white">
+      <view class="title pl-2 border-bottom pb-2">我的订单</view>
+      <view class="order_content d-flex jc-between ai-center mt-2">
+        <navigator class="order_content_item text-center" url="/pages/order/index?type=1">
+          <view class="iconfont icon-ding_dan text-theme "></view>
+          <view class="">全部订单</view>
+        </navigator>
+        <navigator class="order_content_item text-center" url="/pages/order/index?type=2">
+          <view class="iconfont icon-ding_dan  text-theme"></view>
+          <view class="">待付款</view>
+        </navigator>
+        <navigator class="order_content_item text-center" url="/pages/order/index?type=3">
+          <view class="iconfont icon-receipt-address text-theme"></view>
+          <view class="">待收货</view>  
+        </navigator>
+        <navigator class="order_content_item text-center" url="/pages/user/index">
+          <view class="iconfont icon-tuihuotuikuan_dianpu text-theme"></view>
+          <view class="">退款/退货</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 收货地址管理 -->
+    <view class="address_handle bg-white p-2 mb-2">
+      收货地址管理
+    </view>
+    <!-- 联系，反馈，关于 -->
+    <view class="other bg-white">
+      <view class="kefu d-flex jc-between ai-center p-2 border-bottom">
+        <view class="name">联系客户</view>
+        <view class="phone">400-618-4000</view>
+      </view>
+      <view class="feedback p-2 border-bottom">
+        意见反馈
+      </view>
+      <view class="about_us p-2">
+        关于我们
+      </view>
+    </view>
+    <!-- 推荐 -->
+    <view class="share p-2 bg-white mt-2">
+      把应用推荐给其他人
+    </view>
+  </view>
 </view>

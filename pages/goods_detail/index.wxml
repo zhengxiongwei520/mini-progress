@@ -12,9 +12,9 @@
   <view class="price text-theme ml-2 mb-2">￥{{goodsDetail.goods_price}}</view>
   <view class="title d-flex jc-between">
     <view class="flex-5 mb-2 pl-2">{{goodsDetail.goods_name}}</view>
-    <view class="collect d-flex mb-2 flex-1 flex-column ai-center jc-center border-left">
-      <view class="iconfont icon-shoucang"></view>
-      <view class="shoucang">收藏</view>
+    <view class="collect d-flex mb-2 flex-1 flex-column ai-center jc-center border-left" bindtap="handleCollect">
+      <view class="iconfont  icon-shoucang {{collectFlag ? 'active' : '' }}"></view>
+      <view class="shoucang" >收藏</view>
     </view>
   </view>
   <!-- 商品价格结束 -->

@@ -1,12 +1,19 @@
 @import '../../styles/_variable.less';
 
+.user_page {
+  position: relative;
+  height: 110vh;
+  // margin-bottom: 90rpx;
+}
+
 .user_header {
   height: 45vh;
 
   .login {
     position: relative;
     background-color: @themeColor;
-    button{
+
+    button {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -35,4 +42,11 @@
     }
 
   }
+}
+
+.user_content {
+  position: absolute;
+  left: 0;
+  top: 40vh;
+  z-index: 99;
 }

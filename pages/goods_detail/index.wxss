@@ -42,3 +42,6 @@
 .goods_detail_page .bottom_tool .btn_buy {
   background-color: #ffa500;
 }
+.goods_detail_page .icon-shoucang.active {
+  color: #D81E06;
+}

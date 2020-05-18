@@ -7,21 +7,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodsDetail: {}
+    goodsDetail: {},
+    collectFlag: false
   },
   goodsInfo: {},
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onShow: function () {
+    // 获取上一个页面穿过来的options
+    var pages = getCurrentPages();
+    const curPage = pages[pages.length - 1]
+    const options = curPage.options
+
+    // 获取商品详情信息
     const { goods_id } = options
     this.getGoodsDetail(goods_id)
   },
   // 获取商品详情数据
   async getGoodsDetail(goods_id) {
+    // 访问接口获得商品信息
     const res = await request({ url: '/goods/detail', data: { goods_id } })
     const data = res.data.message
     this.goodsInfo = data
+
+    // 判断是否收藏
+    let collectFlag = false
+    const collect = wx.getStorageSync('collect') || [];
+    collectFlag = collect.some(v => {
+      return v.goods_id == goods_id
+    })
+
     this.setData({
       goodsDetail: {
         // 加载优化 用到什么数据就加载什么数据
@@ -30,8 +46,9 @@ Page({
         goods_price: data.goods_price,
         // 后端传过来的有webp图片格式，但是部分苹果手机不接受
         // 所以叫后端都改成jpg png 实在不行在替换
-        goods_introduce: data.goods_introduce.replace(/\.webp/g, '.jpg')
-      }
+        goods_introduce: data.goods_introduce.replace(/\.webp/g, '.jpg'),
+      },
+      collectFlag
     })
   },
   // 轮播图点击预览
@@ -64,5 +81,39 @@ Page({
       icon: 'success',
       mask: false,
     });
+  },
+  /**
+   * 点击收藏
+   */
+  handleCollect() {
+    // 要判断是否已经收藏
+    let collect = wx.getStorageSync('collect') || [];
+    let collectFlag = false
+    const goodsInfo = this.goodsInfo
+    const index = collect.findIndex(v => v.goods_id === goodsInfo.goods_id)
+
+    if (index === -1) {
+      // 缓存中没有，添加
+      collectFlag = true
+      collect.push(goodsInfo)
+      wx.setStorageSync('collect', collect);
+      wx.showToast({
+        title: '已成功收藏',
+        icon: 'success',
+        mask: true,
+      });
+    } else {
+      // 缓存中，就要删除
+      collectFlag = false
+      collect.splice(index, 1)
+      wx.setStorageSync('collect', collect)
+      wx.showToast({
+        title: '已成功移除',
+        icon: 'success',
+        mask: true,
+      });
+    }
+    this.setData({ collectFlag })
+
   }
 })

@@ -1,2 +1,18 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<view class="order_page">
+  <Tbas tabs="{{tabs}}" bindtabsIndexChang="getTabIndex">
+    <view class="tabs_item p-2 border-bottom" wx:for="{{orders}}" wx:key="order_id">
+      <view class="orders_num  d-flex jc-between ai-center w-100">
+        <view class="">订单编号</view>
+        <view class="">{{item.order_number}}</view>
+      </view>
+      <view class="orders_price d-flex jc-between ai-center w-100">
+        <view class="">订单价格</view>
+        <view class="text-theme">￥{{item.order_price}}</view>
+      </view>
+      <view class="orders_date d-flex jc-between ai-center w-100">
+        <view class="">订单日期</view>
+        <view class="">{{item.time_cn}}</view>
+      </view>
+    </view>
+  </Tbas>
+</view>

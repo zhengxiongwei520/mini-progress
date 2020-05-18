@@ -128,16 +128,16 @@
   flex: 10;
 }
 .border-top {
-  border-top: solid 1px #000;
+  border-top: solid 2rpx #ccc;
 }
 .border-right {
-  border-right: solid 1px #000;
+  border-right: solid 2rpx #ccc;
 }
 .border-bottom {
-  border-bottom: solid 1px #000;
+  border-bottom: solid 2rpx #ccc;
 }
 .border-left {
-  border-left: solid 1px #000;
+  border-left: solid 2rpx #ccc;
 }
 .radius-1 {
   border-radius: 10rpx;

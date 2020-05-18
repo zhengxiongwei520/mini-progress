@@ -1,3 +1,7 @@
+.user_page {
+  position: relative;
+  height: 110vh;
+}
 .user_header {
   height: 45vh;
 }
@@ -26,4 +30,10 @@
 .user_header .user_info .user_icon {
   width: 150rpx;
   height: 150rpx;
+}
+.user_content {
+  position: absolute;
+  left: 0;
+  top: 40vh;
+  z-index: 99;
 }
