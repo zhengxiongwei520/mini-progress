@@ -1,1 +1,50 @@
-/* pages/feedback/index.wxss */
+.feedback_page {
+  height: 100vh;
+}
+.feedback_page .nav_item.acitve {
+  border-bottom: 2rpx solid #D81E06;
+  color: #D81E06;
+}
+.feedback_page .types_item {
+  width: 28%;
+  border: 2rpx solid white;
+}
+.feedback_page .types_item.active {
+  border: 2rpx solid #D81E06;
+}
+.feedback_page .types_content {
+  position: relative;
+}
+.feedback_page .types_content textarea {
+  width: 95%;
+}
+.feedback_page .types_content .fb_tool {
+  z-index: 99;
+  position: absolute;
+  bottom: 10rpx;
+  left: 40rpx;
+}
+.feedback_page .types_content .fb_tool .add_image {
+  width: 90rpx;
+  height: 90rpx;
+  font-size: 40rpx;
+  background-color: #D81E06;
+}
+.feedback_page .types_content .fb_tool .up_img_item {
+  width: 90rpx;
+  height: 90rpx;
+  position: relative;
+}
+.feedback_page .types_content .fb_tool .up_img_item .up_img_item_icon {
+  position: absolute;
+  right: -10rpx;
+  top: -10rpx;
+}
+.feedback_page .btn icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 6rpx;
+}
+.feedback_page .btn .btn_submit {
+  background-color: #D81E06;
+}

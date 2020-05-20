@@ -1,1 +1,10 @@
-/* pages/collect/index.wxss */
+.collect_page {
+  height: 100vh;
+}
+.collect_page .nav_item {
+  border: 1px solid #ccc;
+}
+.collect_page .nav_item.active {
+  border: 1px solid #D81E06;
+  color: #D81E06;
+}

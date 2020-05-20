@@ -72,9 +72,9 @@
         <view class="name">联系客户</view>
         <view class="phone">400-618-4000</view>
       </view>
-      <view class="feedback p-2 border-bottom">
+      <navigator url="/pages/feedback/index" class="feedback p-2 border-bottom">
         意见反馈
-      </view>
+      </navigator>
       <view class="about_us p-2">
         关于我们
       </view>

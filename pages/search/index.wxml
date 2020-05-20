@@ -1,2 +1,12 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<view class="search_page bg-grey2">
+  <view style="height:0.1rpx;"></view>
+  <view class="search_input  m-2 d-flex bg-white">
+    <input type="text" class="flex-1 p-1 pl-2" bindinput="handleInput" value="{{inputValue}}" placeholder="输入想要查询的商品"></input>
+    <view class="iconfont_x h-100 d-flex jc-center ai-center" bindtap="clearInput" hidden="{{!focusFlag}}">x</view>
+  </view>
+  <view class="search_content">
+    <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}" class="content_item mx-2 bg-white border-bottom" wx:for="{{goods}}">
+      {{item.goods_name}}
+    </navigator>
+  </view>
+</view>

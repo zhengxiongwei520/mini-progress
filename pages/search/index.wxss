@@ -1,1 +1,23 @@
-/* pages/search/index.wxss */
+.search_page {
+  height: 100vh;
+}
+.search_page .search_input {
+  position: relative;
+}
+.search_page .iconfont_x {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: #ccc;
+  z-index: 99;
+}
+.search_page .content_item {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}

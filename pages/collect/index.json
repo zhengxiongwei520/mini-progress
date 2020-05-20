@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "Tbas":"../../components/Tbas/Tbas"
+  },
+  "navigationBarTitleText": "收藏"
 }

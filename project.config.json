@@ -105,6 +105,33 @@
 					"pathName": "pages/order/index",
 					"query": "type=1",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/collect/index",
+					"pathName": "pages/collect/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search/index",
+					"pathName": "pages/search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/feedback/index",
+					"pathName": "pages/feedback/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/goods_list/index",
+					"pathName": "pages/goods_list/index",
+					"scene": null
 				}
 			]
 		}

@@ -1,2 +1,26 @@
-<!--pages/collect/index.wxml-->
-<text>pages/collect/index.wxml</text>
+<view class="collect_page bg-grey2">
+  <Tbas tabs="{{tabs}}" bindtabsIndexChang="getgetTabsIndex">
+    <block class="" wx:if="{{index==0}}">
+      <view class="nav d-flex ml-2">
+        <view class="nav_item p-1 m-1 {{index === itemIndex ? 'active' : ''}}" wx:for="{{nav}}" wx:key="index" data-index="{{index}}" bindtap="changeNavItemIndex">
+          {{item.name}}
+        </view>
+      </view>
+      <view class="content">
+        <navigator class="content_item m-2 bg-white d-flex" wx:for="{{collect}}">
+          <view class="item_left flex-2 text-center">
+            <image class="img" style="width:80%;" mode="widthFix" src="{{item.goods_small_logo}}"></image>
+          </view>
+          <view class="item_right d-flex flex-4 flex-column jc-between p-2">
+            <view class="goods_name text-hidden">{{item.goods_name}}</view>
+            <view class="goods_price text-theme">{{item.goods_price}}</view>
+          </view>
+        </navigator>
+        
+      </view>
+    </block>
+    <block class="" wx:elif="{{index==1}}">品牌收藏</block>
+    <block class="" wx:elif="{{index==2}}">店铺收藏</block>
+    <block class="" wx:else>浏览足迹</block>
+  </Tbas>
+</view>

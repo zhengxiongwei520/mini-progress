@@ -1,66 +1,43 @@
-// pages/search/index.js
+import { request } from '../../request/index.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    goods: [],
+    inputValue: null,
+    focusFlag: false
   },
-
+  timer: -1,
   /**
-   * 生命周期函数--监听页面加载
+   * 输入框输入时的事件
    */
-  onLoad: function (options) {
-
+  handleInput(e) {
+    const { value } = e.detail
+    if (!value.trim()) {
+      clearTimeout(this.timer)
+      this.setData({ goods: '', focusFlag: false })
+      return
+    }
+    this.setData({ focusFlag: true })
+    clearTimeout(this.timer)
+    this.timer = setTimeout(() => {
+      this.qsearch(value)
+    }, 333)
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  async qsearch(value) {
+    const query = value
+    const res = await request({ url: '/goods/qsearch', data: { query } })
+    this.setData({
+      goods: res.data.message
+    })
   },
-
   /**
-   * 生命周期函数--监听页面显示
+   * 清空输入框
    */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  clearInput() {
+    clearTimeout(this.timer)
+    this.setData({ inputValue: '', goods: [], focusFlag: false })
   }
 })

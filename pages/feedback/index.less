@@ -1,0 +1,88 @@
+@import '../../styles/_variable.less';
+
+.feedback_page {
+  height: 100vh;
+
+
+
+
+  .nav_item {
+    &.acitve {
+      border-bottom: 2rpx solid @themeColor;
+      color: @themeColor;
+    }
+  }
+
+  .types_item {
+    width: 28%;
+    border: 2rpx solid white;
+
+    &.active {
+      border: 2rpx solid @themeColor;
+    }
+  }
+
+
+  .types_content {
+    position: relative;
+
+    textarea {
+      width: 95%;
+    }
+
+    .fb_tool {
+
+      z-index: 99;
+      position: absolute;
+      bottom: 10rpx;
+      left: 40rpx;
+
+
+
+      .add_image {
+
+        width: 90rpx;
+        height: 90rpx;
+        font-size: 40rpx;
+        background-color: @themeColor;
+
+
+      }
+
+      .up_img_item {
+        width: 90rpx;
+        height: 90rpx;
+        position: relative;
+
+        .up_img_item_icon {
+          position: absolute;
+          right: -10rpx;
+          top: -10rpx;
+          
+        }
+      }
+    }
+
+
+
+
+  }
+
+  .btn {
+    icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-bottom: 6rpx;
+    }
+
+    .btn_submit {
+      background-color: @themeColor;
+    }
+  }
+
+
+
+
+
+
+}
